@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'RKIMUIKit_Example' do
+  pod 'RKIMUIKit', :path => '../'
+
+  target 'RKIMUIKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
