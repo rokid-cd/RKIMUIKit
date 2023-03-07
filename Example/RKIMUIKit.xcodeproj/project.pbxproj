@@ -28,8 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0152DFDD46863A776725C0A5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		35AFA8F1F0EDABF0B17B1CA5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		0152DFDD46863A776725C0A5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		35AFA8F1F0EDABF0B17B1CA5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* RKIMUIKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RKIMUIKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,7 +44,7 @@
 		745AC5EF23B12721F9CE0257 /* Pods-RKIMUIKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RKIMUIKit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-RKIMUIKit_Tests/Pods-RKIMUIKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		783BFB42262F2782DF3A4FDF /* Pods-RKIMUIKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RKIMUIKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-RKIMUIKit_Example/Pods-RKIMUIKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9FFA2211F5EC47204BFE58D1 /* Pods_RKIMUIKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RKIMUIKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BAAE06A55D0F279DFB7866FC /* RKIMUIKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = RKIMUIKit.podspec; path = ../RKIMUIKit.podspec; sourceTree = "<group>"; };
+		BAAE06A55D0F279DFB7866FC /* RKIMUIKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = RKIMUIKit.podspec; path = ../RKIMUIKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C5845A782BEA62C7ACC40A19 /* Pods-RKIMUIKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RKIMUIKit_Example.release.xcconfig"; path = "Target Support Files/Pods-RKIMUIKit_Example/Pods-RKIMUIKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		CB4B7A7F34AD2CDFFF07E28E /* Pods_RKIMUIKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RKIMUIKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -156,7 +156,6 @@
 				745AC5EF23B12721F9CE0257 /* Pods-RKIMUIKit_Tests.debug.xcconfig */,
 				660E860AB6FEB3162B7B5E69 /* Pods-RKIMUIKit_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,6 +226,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

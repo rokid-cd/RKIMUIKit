@@ -1,0 +1,6 @@
+framework module RKIMUIKit {
+  umbrella header "RKIMUIKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

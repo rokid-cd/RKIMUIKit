@@ -1,0 +1,22 @@
+{
+  "name": "RKIMUIKit",
+  "version": "0.1.0",
+  "summary": "A short description of RKIMUIKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/刘爽/RKIMUIKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "刘爽": "shuang.liu@rokid.com"
+  },
+  "source": {
+    "git": "https://github.com/刘爽/RKIMUIKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "RKIMUIKit/Classes/**/*"
+}

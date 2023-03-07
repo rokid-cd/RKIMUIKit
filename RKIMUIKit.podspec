@@ -30,13 +30,26 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'RKIMUIKit/Classes/**/*'
+  s.vendored_frameworks = 'RKIMUIKit/Classes/*.framework'
+  s.resources = 'RKIMUIKit/Assets/*.bundle'
   
-  # s.resource_bundles = {
-  #   'RKIMUIKit' => ['RKIMUIKit/Assets/*.png']
-  # }
+  s.dependency 'RKIMCore'
+  s.dependency 'RKSocket'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'Then'
+  s.dependency 'SnapKit'
+  
+  s.dependency 'RxSwift'
+  s.dependency 'RxCocoa'
+  s.dependency 'Kingfisher'
+  s.dependency 'KingfisherWebP'
+  s.dependency 'PullToRefreshKit'
+
+  s.dependency 'lottie-ios', '~> 3.1.6'
+  s.dependency 'TZImagePickerController'
+
+  s.dependency 'RKIHandyJSON'
+  
+  s.dependency 'RKBaseModule'
+  
 end

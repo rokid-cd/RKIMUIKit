@@ -1,0 +1,11 @@
+framework module RKIMUIKit {
+  umbrella header "RKIMUIKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module RKIMUIKit.Swift {
+  header "RKIMUIKit-Swift.h"
+  requires objc
+}

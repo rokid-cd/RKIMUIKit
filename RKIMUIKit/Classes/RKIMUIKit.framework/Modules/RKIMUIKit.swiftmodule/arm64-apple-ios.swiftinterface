@@ -1,0 +1,213 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name RKIMUIKit
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFoundation
+import Alamofire
+import CommonCrypto
+import CoreMIDI
+import Darwin
+import Foundation
+import Kingfisher
+import KingfisherWebP
+import Lottie
+import MobileCoreServices
+import PullToRefreshKit
+import RKBaseModule
+import RKIHandyJSON
+import RKILogger
+import RKIMCore
+@_exported import RKIMUIKit
+import RKIUtils
+import RxCocoa
+import RxSwift
+import SnapKit
+import Swift
+import TZImagePickerController
+import Then
+import UIKit
+import WCDBSwift
+import WebKit
+import _Concurrency
+import _StringProcessing
+import simd
+public enum ARAlterViewShowStyle : Swift.Int {
+  case top
+  case center
+  case bottom
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public typealias ActionHandler = () -> Swift.Void
+extension UIKit.UIImageView {
+  @_Concurrency.MainActor(unsafe) public func rk_groupAvatarImage(_ userList: [Swift.String], headUrl: Foundation.URL? = nil, placeholder: UIKit.UIImage? = nil)
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class ARIMContactsSelectionVC : UIKit.UIViewController {
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+}
+extension RKIMUIKit.ARIMContactsSelectionVC : UIKit.UITableViewDataSource {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+}
+extension RKIMUIKit.ARIMContactsSelectionVC : UIKit.UITableViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+}
+@objc public enum ARIMErrorCode : Swift.Int {
+  case createSingleGroup = 0
+  case createMultiGroup
+  case addGroupMember
+  case removeGroupMember
+  case transferGroupOwner
+  case leaveGroup
+  case dissolveGroup
+  case fetchGroupInfo
+  case fetchChatList
+  case fetchHistoryMessage
+  case fetchMissedMessage
+  case markGroupMessageReaded
+  case sendMessage
+  case reSendMessage
+  case other
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objc public class ARIMError : ObjectiveC.NSObject, Swift.Error {
+  final public let code: RKIMUIKit.ARIMErrorCode
+  final public let message: Swift.String?
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+public let STATUSBAR_HEIGHT: CoreFoundation.CGFloat
+@objc @_inheritsConvenienceInitializers public class UI : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class Dev : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class ARIMUserInfo : ObjectiveC.NSObject {
+  final public let id: Swift.String
+  final public let name: Swift.String
+  final public let avatar: Swift.String?
+  final public let unitName: Swift.String?
+  public init(id: Swift.String, name: Swift.String, avatar: Swift.String? = nil, unitName: Swift.String? = nil)
+  @objc deinit
+}
+@objc public protocol ARIMDelegate : ObjectiveC.NSObjectProtocol {
+  @objc func getContactList() -> [RKIMUIKit.ARIMUserInfo]
+  @objc func getContact(byId: Swift.String) -> RKIMUIKit.ARIMUserInfo?
+}
+@objc public protocol ARIMEventListener : ObjectiveC.NSObjectProtocol {
+  @objc optional func onLogout(reaseon: Swift.Int)
+  @objc optional func onNumberOfUnreadMessageChanged(latestCount: Swift.Int)
+  @objc optional func onStartCooperation(toUsers: [RKIMUIKit.ARIMUserInfo], nav: UIKit.UINavigationController?)
+  @objc optional func onViewCooperationRecords(nav: UIKit.UINavigationController?)
+  @objc optional func onViewUserInfo(userInfo: RKIMUIKit.ARIMUserInfo, nav: UIKit.UINavigationController?)
+  @objc optional func onMessageExtDetail(ext: RKIMUIKit.RKIMMessageExt, data: Any?, nav: UIKit.UINavigationController?)
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class ARIMManager : ObjectiveC.NSObject {
+  public static let share: RKIMUIKit.ARIMManager
+  public var user: RKIMUIKit.ARIMUserInfo? {
+    get
+  }
+  public var isLogin: Swift.Bool {
+    get
+  }
+  weak public var delegate: RKIMUIKit.ARIMDelegate!
+  public typealias LoginCompletion = (Swift.Error?) -> Swift.Void
+  public typealias SearchCompletion = ([RKIMUIKit.ARIMManager.searchDataGroup]) -> Swift.Void
+  public typealias searchDataGroup = (type: Swift.String, list: [Any])
+  public var trustedHosts: [Swift.String]
+  public func config(socketURL: Swift.String, imURL: Swift.String, appId: Swift.String, secret: Swift.String, ipList: [Swift.String] = [])
+  public func addEventListener(listener: RKIMUIKit.ARIMEventListener)
+  public func removeEventListener(listener: RKIMUIKit.ARIMEventListener)
+  public func login(user: RKIMUIKit.ARIMUserInfo, companyId: Swift.String, complete: @escaping RKIMUIKit.ARIMManager.LoginCompletion)
+  public func logout()
+  public func getChatListViewController() -> UIKit.UIViewController?
+  public func reloadChatListData()
+  public func getUnreadMesssageCount() -> Swift.Int?
+  public func startChat(toUser: RKIMUIKit.ARIMUserInfo, fromVC: UIKit.UIViewController)
+  public func inviteJoinGroup(fromVC: UIKit.UIViewController)
+  public func startTaskGroup(taskInfo: [Swift.String : Any], fromVC: UIKit.UIViewController)
+  public func startTaskSingleChat(userID: Swift.String, taskInfo: [Swift.String : Any])
+  public func joinChat(fromMessage: RKIMCore.RKIMMessage, fromVC: UIKit.UIViewController)
+  public func joinGroup(fromGroup: RKIMCore.RKIMGroup, fromVC: UIKit.UIViewController)
+  public func startSearch(fromVC: UIKit.UIViewController)
+  public func getMessageAndGroup(_ searchContent: Swift.String, complete: @escaping RKIMUIKit.ARIMManager.SearchCompletion)
+  @objc deinit
+}
+extension RKIMUIKit.ARIMManager : RKIMCore.RKIMDelegate {
+  @objc dynamic public func didFail(WithError error: Swift.Error)
+  @objc dynamic public func message(didReceiveSystemMessage message: RKIMCore.RKIMMessage)
+  @objc dynamic public func didOpen()
+  @objc dynamic public func didClose(code: Swift.Int, reason: Swift.String?)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class JXPhotoBrowserProgressView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) open var progress: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc public enum MessageExtType : Swift.Int, RKIHandyJSON.HandyJSONEnum {
+  case Empty = 0
+  case Task = 1
+  case Examine = 2
+  case WorkAssistant = 3
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum RKWorkAssistantMessageType : Swift.Int, RKIHandyJSON.HandyJSONEnum {
+  case checkSignin = 1
+  case ExamineApply = 2
+  case ExamineResult = 3
+  case HandOverApply = 4
+  case HandOverResult = 5
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class RKIMMessageExt : ObjectiveC.NSObject, RKIHandyJSON.HandyJSON {
+  final public let assistantBusinessType: RKIMUIKit.RKWorkAssistantMessageType
+  final public let type: RKIMUIKit.MessageExtType
+  @objc override required dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class RKIMMessageWorkAssistantModel : ObjectiveC.NSObject, RKIHandyJSON.HandyJSON {
+  @objc required override dynamic public init()
+  public var taskId: Swift.String?
+  public var executeId: Swift.String?
+  public var executionDetailId: Swift.String?
+  public var taskTransferId: Swift.String?
+  @objc deinit
+}
+extension RKIMUIKit.ARAlterViewShowStyle : Swift.Equatable {}
+extension RKIMUIKit.ARAlterViewShowStyle : Swift.Hashable {}
+extension RKIMUIKit.ARAlterViewShowStyle : Swift.RawRepresentable {}
+extension RKIMUIKit.ARIMErrorCode : Swift.Equatable {}
+extension RKIMUIKit.ARIMErrorCode : Swift.Hashable {}
+extension RKIMUIKit.ARIMErrorCode : Swift.RawRepresentable {}
+extension RKIMUIKit.MessageExtType : Swift.Equatable {}
+extension RKIMUIKit.MessageExtType : Swift.Hashable {}
+extension RKIMUIKit.MessageExtType : Swift.RawRepresentable {}
+extension RKIMUIKit.RKWorkAssistantMessageType : Swift.Equatable {}
+extension RKIMUIKit.RKWorkAssistantMessageType : Swift.Hashable {}
+extension RKIMUIKit.RKWorkAssistantMessageType : Swift.RawRepresentable {}
