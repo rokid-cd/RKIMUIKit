@@ -334,8 +334,6 @@ SWIFT_PROTOCOL("_TtP9RKIMUIKit17ARIMEventListener_")
 - (void)onNumberOfUnreadMessageChangedWithLatestCount:(NSInteger)latestCount;
 /// 发起协作事件
 - (void)onStartCooperationToUsers:(NSArray<ARIMUserInfo *> * _Nonnull)toUsers nav:(UINavigationController * _Nullable)nav;
-/// 查看我的远程协作记录
-- (void)onViewCooperationRecordsWithNav:(UINavigationController * _Nullable)nav;
 /// 查看联系人详情
 - (void)onViewUserInfoWithUserInfo:(ARIMUserInfo * _Nonnull)userInfo nav:(UINavigationController * _Nullable)nav;
 /// 查看消息详情

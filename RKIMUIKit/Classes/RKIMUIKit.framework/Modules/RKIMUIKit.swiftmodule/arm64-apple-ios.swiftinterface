@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
-// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name RKIMUIKit
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name RKIMUIKit
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
 import Alamofire
@@ -46,9 +46,9 @@ extension UIKit.UIImageView {
   @_Concurrency.MainActor(unsafe) public func rk_groupAvatarImage(_ userList: [Swift.String], headUrl: Foundation.URL? = nil, placeholder: UIKit.UIImage? = nil)
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class ARIMContactsSelectionVC : UIKit.UIViewController {
-  @objc deinit
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @objc deinit
 }
 extension RKIMUIKit.ARIMContactsSelectionVC : UIKit.UITableViewDataSource {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
@@ -112,7 +112,6 @@ public let STATUSBAR_HEIGHT: CoreFoundation.CGFloat
   @objc optional func onLogout(reaseon: Swift.Int)
   @objc optional func onNumberOfUnreadMessageChanged(latestCount: Swift.Int)
   @objc optional func onStartCooperation(toUsers: [RKIMUIKit.ARIMUserInfo], nav: UIKit.UINavigationController?)
-  @objc optional func onViewCooperationRecords(nav: UIKit.UINavigationController?)
   @objc optional func onViewUserInfo(userInfo: RKIMUIKit.ARIMUserInfo, nav: UIKit.UINavigationController?)
   @objc optional func onMessageExtDetail(ext: RKIMUIKit.RKIMMessageExt, data: Any?, nav: UIKit.UINavigationController?)
 }
@@ -138,6 +137,7 @@ public let STATUSBAR_HEIGHT: CoreFoundation.CGFloat
   public func reloadChatListData()
   public func getUnreadMesssageCount() -> Swift.Int?
   public func startChat(toUser: RKIMUIKit.ARIMUserInfo, fromVC: UIKit.UIViewController)
+  public func startGroupChat(groupName: Swift.String, groupMember: [Swift.String])
   public func inviteJoinGroup(fromVC: UIKit.UIViewController)
   public func startTaskGroup(taskInfo: [Swift.String : Any], fromVC: UIKit.UIViewController)
   public func startTaskSingleChat(userID: Swift.String, taskInfo: [Swift.String : Any])
